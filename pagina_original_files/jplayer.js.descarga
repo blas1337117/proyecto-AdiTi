@@ -1,0 +1,5 @@
+define(['jquery', host('jplayer/jquery.jplayer.min.js'), host('jplayer/jquery.grab.js'), host('jplayer/circle.player.js'), host('jplayer/playlist.js')], function($,a,b,cp,pl) { window.CirclePlayer = cp; window.jPlayerPlaylist = pl; return host('jplayer/'); });
+
+function host(p) {
+    return require.legacyPath ? require.legacyPath(p) : ('//' + (function(h) {return h.slice((3===h.length||6===h.length)|0).join('.')})(location.hostname.split('.')) + 'assets/js/' + p);
+}

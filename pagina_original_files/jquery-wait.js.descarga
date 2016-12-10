@@ -1,0 +1,7 @@
+/* $.wait(time).then(function) */
+(function (factory) {
+    if (typeof define === 'function' && define.amd) define(['jquery'], factory);
+    else factory(jQuery);
+}(function ($) {
+    $.wait=function(t){return $.Deferred(function(d){setTimeout(d.resolve,t)})};
+}));
